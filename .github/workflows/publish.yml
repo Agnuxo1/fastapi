@@ -41,7 +41,7 @@ jobs:
           mkdir -p dist
           git archive --format=tar.gz --prefix="fastapi-deployment-starter-${TAG#v}/" "$TAG" -o "dist/fastapi-deployment-starter-${TAG#v}.tar.gz"
           git archive --format=zip --prefix="fastapi-deployment-starter-${TAG#v}/" "$TAG" -o "dist/fastapi-deployment-starter-${TAG#v}.zip"
-          sha256sum dist/* > dist/SHA256SUMS
+          (cd dist && sha256sum *) > dist/SHA256SUMS
 
       - name: Create GitHub release
         env:
