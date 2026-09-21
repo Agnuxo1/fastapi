@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      FASTAPI_ENVIRONMENT: production
+    read_only: true
+    security_opt:
+      - no-new-privileges:true

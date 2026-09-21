@@ -1,0 +1,27 @@
+{
+  "repository": "Agnuxo1/fastapi",
+  "version": "0.1.0",
+  "source_commit": "2d4507c3a26da127fdf4bc143c5bc0073889d8b3",
+  "archive": {
+    "name": "source-2d4507c.tar.gz",
+    "sha256": "4964dc5544f4a7048b60a99704c3113eeb95ca2fe1343ac459ab47140b079094"
+  },
+  "tracked_file_count": 14,
+  "files": [
+    {"path": ".gitignore", "bytes": 96, "sha256": "e609f32e0d6ae0c7ef5743083cdbf5f3f1c964176a54981a80812a1a4b034aec"},
+    {"path": "README.md", "bytes": 1995, "sha256": "e17ab766a95c6f3a574ddc91733025c22bd1a334c3fb5e0f9d01c94c646608c5"},
+    {"path": "app/__init__.py", "bytes": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    {"path": "app/api/__init__.py", "bytes": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    {"path": "app/api/deps.py", "bytes": 189, "sha256": "b26e46c656c3fd9169f70411681e66a7382e6f81af025434a0388175690fea34"},
+    {"path": "app/api/main.py", "bytes": 136, "sha256": "3f737e0ceb4f7f6018c7d52d0437931ee3762b12a2e034e4584a8721ee8fee77"},
+    {"path": "app/api/routes/__init__.py", "bytes": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    {"path": "app/api/routes/items.py", "bytes": 811, "sha256": "aab878f9dc874fa463b735a2d3b08aab2115bf59a8179777767a01598c8ae247"},
+    {"path": "app/core/__init__.py", "bytes": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    {"path": "app/core/config.py", "bytes": 337, "sha256": "1b9f2ca32ff99e26c50758dae31be5a39cf608a952353b97b9f8281b15284193"},
+    {"path": "app/main.py", "bytes": 772, "sha256": "c828c95302e2fa3a7126ed994d3b40a0468bf056494e831ae88bac740cdecc27"},
+    {"path": "app/templates/index.html", "bytes": 8065, "sha256": "a2210ba6b84d72fa1abead49ed557a0997fb782fdad99f5bba562059c4095f05"},
+    {"path": "public/favicon.ico", "bytes": 7896, "sha256": "ad64c243dab0cb73fe5fda44d4fac20a9c43713b70ea487525bbd88e89939409"},
+    {"path": "pyproject.toml", "bytes": 210, "sha256": "6166b6ebf577b048c43f0dcec6f26d1e6cd13bb8add30d52fa25a98b2881a3a4"}
+  ],
+  "verification": "Generated from the clean baseline checkout before any working-tree edit."
+}

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deployment-starter
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fastapi-deployment-starter
+  template:
+    metadata:
+      labels:
+        app: fastapi-deployment-starter
+    spec:
+      containers:
+        - name: api
+          image: fastapi-deployment-starter:2.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /api/v1/readyz
+              port: 8000
+          livenessProbe:
+            httpGet:
+              path: /api/v1/healthz
+              port: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-deployment-starter
+spec:
+  selector:
+    app: fastapi-deployment-starter
+  ports:
+    - port: 80
+      targetPort: 8000

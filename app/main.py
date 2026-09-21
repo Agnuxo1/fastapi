@@ -1,6 +1,8 @@
 from pathlib import Path
 
 from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
@@ -9,11 +11,23 @@ from app.core.config import settings
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
-    description=settings.PROJECT_NAME,
+    description="A typed, testable FastAPI starter with portable deployment contracts.",
     version=settings.VERSION,
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
 )
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
+
+app.add_middleware(GZipMiddleware, minimum_size=1000)
+if settings.cors_origins:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.cors_origins,
+        allow_methods=["GET"],
+        allow_headers=["*"],
+    )
 
 templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
 

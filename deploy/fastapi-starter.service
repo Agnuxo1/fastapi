@@ -1,0 +1,16 @@
+[Unit]
+Description=FastAPI Deployment Starter
+After=network.target
+
+[Service]
+Type=simple
+User=fastapi
+WorkingDirectory=/opt/fastapi-deployment-starter
+Environment=FASTAPI_ENVIRONMENT=production
+ExecStart=/opt/fastapi-deployment-starter/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+Restart=on-failure
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

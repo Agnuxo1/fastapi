@@ -1,0 +1,18 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: fastapi-deployment-starter
+spec:
+  template:
+    spec:
+      containers:
+        - image: fastapi-deployment-starter:2.0.0
+          ports:
+            - containerPort: 8000
+          env:
+            - name: FASTAPI_ENVIRONMENT
+              value: production
+          startupProbe:
+            httpGet:
+              path: /api/v1/healthz
+              port: 8000
